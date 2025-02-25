@@ -26,10 +26,10 @@ public class Base_Page extends Read_Property {
 	public void Start_Appium() {
 		// Specify the path to the Appium server executable (main.js)
 		File appiumJS = new File(
-				"C:\\Users\\Ai-18 Sohan\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js");
+				"C:\\Users\\sohan\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js");
 
 		// Specify the IP address and port for the Appium server
-		String ipAddress = "192.168.1.132";
+		String ipAddress = "192.168.75.10";
 		int port = 4723;
 
 		// Create an instance of AppiumDriverLocalService with the specified
@@ -49,11 +49,11 @@ public class Base_Page extends Read_Property {
 			UiAutomator2Options options = new UiAutomator2Options();
 
 			// Set capabilities for the AndroidDriver
-			options.setCapability("ANDROID_HOME", "C:\\Users\\Aip-18 Sohan\\AppData\\Local\\Android\\Sdk");
+			options.setCapability("ANDROID_HOME", "C:\\Users\\sohan\\AppData\\Local\\Android\\Sdk");
 			options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
 			options.setPlatformName("Android");
-			options.setDeviceName("BlueStacks");
-			options.setUdid("127.0.0.1:5555");
+			options.setDeviceName("Pixel 4a");
+			options.setUdid("emulator-5554");
 			options.setCapability("appium-plugins",
 					"images,appium-dashboard,appium-reporter-plugin,element-wait,execute-driver,universal-xml");
 
@@ -65,7 +65,7 @@ public class Base_Page extends Read_Property {
 			// Create AndroidDriver instance with the specified URL and options
 			// Note: Ensure that the Appium server is running at http://192.168.1.132:4729
 			// before executing this test.
-			driver = new AndroidDriver(new URL("http://192.168.1.132:4723"), options);
+			driver = new AndroidDriver(new URL("http://192.168.75.10:4723"), options);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (SessionNotCreatedException e) {
